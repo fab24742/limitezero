@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Límite Zero: Batallas de Rap en Lima</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: #1e1e1e;
+            color: #e0e0e0;
+            text-align: center;
+        }
+        header {
+            background-color: #000;
+            color: white;
+            padding: 20px 10px;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px 0;
+            position: fixed;
+            width: 250px;
+            height: 100%;
+            top: 0;
+            left: -250px;
+            z-index: 1000;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            text-align: left;
+        }
+        nav ul li {
+            margin: 15px 0;
+        }
+        nav a {
+            text-decoration: none;
+            color: white;
+            padding: 10px 15px;
+            display: block;
+        }
+        nav a:hover {
+            background-color: #555;
+        }
+        .menu-toggle {
+            position: fixed;
+            left: 0;
+            top: 20px;
+            width: 40px;
+            height: 40px;
+            background-color: #333;
+            color: white;
+            border: none;
+            cursor: pointer;
+            z-index: 1100;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding-top: 80px; /* To offset the fixed nav */
+        }
+        section {
+            background: #2b2b2b;
+            margin: 15px 0;
+            padding: 20px;
+            border-radius: 8px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        img, video {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+        .gallery img, .gallery video {
+            max-width: 250px;
+            border-radius: 8px;
+            border: 2px solid #333;
+        }
+        footer {
+            background-color: #000;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.5);
+        }
+        h2, h3 {
+            text-align: center;
+            color: #f39c12;
+        }
+        .highlight {
+            color: #e74c3c;
+        }
+        .section-header {
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .croquis {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
+        .croquis img {
+            max-width: 45%;
+            height: auto;
+            margin: 10px;
+        }
+        .comments-section {
+            margin-top: 20px;
+            background: #2b2b2b;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        .comments-section h2 {
+            border-bottom: 2px solid #f39c12;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        .comments-section form {
+            display: flex;
+            flex-direction: column;
+        }
+        .comments-section form input,
+        .comments-section form textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background: #1e1e1e;
+            color: #e0e0e0;
+        }
+        .comments-section form button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #f39c12;
+            color: white;
+            cursor: pointer;
+        }
+        .comments-section form button:hover {
+            background: #e67e22;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            const nav = document.querySelector('nav');
+            nav.style.left = nav.style.left === '0px' ? '-250px' : '0px';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Límite Zero: Batallas de Rap en Lima</h1>
+    </header>
+    <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+    <nav>
+        <ul>
+            <li><a href="#grupo">El Grupo</a></li>
+            <li><a href="#justificacion">Justificación</a></li>
+            <li><a href="#antecedentes">Antecedentes</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#observacion">Observación</a></li>
+            <li><a href="#sujetos">Sujetos de Observación</a></li>
+            <li><a href="#conclusiones">Conclusiones Personales</a></li>
+            <li><a href="#integrantes">Integrantes</a></li>
+            <li><a href="#fotos">Fotos</a></li>
+            <li><a href="#contexto">Contexto</a></li>
+            <li><a href="#bibliografia">Bibliografía</a></li>
+            <li><a href="#comentarios">Comentarios</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="grupo">
+            <h2 class="section-header">Presentación del Grupo Elegido</h2>
+            <div class="gallery">
+                <img src="precentaciongrupoelegido.png" alt="Presentación del grupo elegido" style="max-width: 50%;">
+            </div>
+            <p>Decidimos investigar el colectivo <span class="highlight">“Límite Zero”</span>, un reconocido grupo de batallas de rap dentro de Lima. La ubicación geográfica de este es en el parque John Lennon, San Miguel, específicamente en la rotonda dentro de este.</p>
+        </section>
+        
+        <section id="justificacion">
+            <h2 class="section-header">Justificación</h2>
+            <p>La elección de este grupo fue motivada por el gran interés o afinidad mostrada por uno de nuestros integrantes. Tras una discusión, optamos por Límite Zero debido a su alta frecuencia de realización de eventos, a diferencia de otros colectivos, ya que se organizan de manera semanal. Además, su ubicación geográfica nos permite visitarlo con mayor frecuencia. Asimismo, Límite Zero es un espacio de diversión y confraternidad donde lo único que importa es pasarla bien.</p>
+        </section>
+
+        <section id="antecedentes">
+            <h2 class="section-header">Antecedentes</h2>
+            <h3>Límite Zero Perú</h3>
+            <p>Límite Zero es un colectivo de freestyle rap que organiza batallas y eventos en Lima. Se ha consolidado como uno de los referentes en la escena del rap improvisado, atrayendo a competidores talentosos de todo el país. </p>
+            <p>En sus eventos, se pueden encontrar diversos roles como jurados, DJ, anfitrión, asistentes y competidores. Estos últimos siempre constituyen la mayoría en comparación con los demás. A pesar de la diversidad de roles, lo que une a todos los participantes es su pasión compartida por el hip hop, el rap y la improvisación. Límite Zero, el colectivo de rap, ha estado organizando competencias desde 2019, surgiendo en medio del "boom" de viralidad de las batallas de rap que tuvo lugar ese mismo año entre mayo y junio. Algo que diferencia a este colectivo de otros es su versatilidad para organizar sus competencias en varios distritos de Lima, siendo que, en su gran mayoría, otros colectivos solo tienen un lugar fijo para realizar sus batallas. Esto último no quiere decir que no tengan su “lugar insignia”, una importante cantidad de sus competencias se realizan en el parque John Lennon, ubicado en San Miguel.</p>
+            <h3>Recuento Histórico</h3>
+            <p>Los grupos de rap en Perú tienen sus orígenes en la creciente influencia de la cultura hip-hop global que empezó a penetrar el país en la década de 1990. En sus inicios, el rap peruano se desarrolló en barrios populares, donde los jóvenes encontraron en esta forma de expresión artística una manera de contar sus realidades y desafíos diarios. Las primeras batallas de rap improvisadas en Perú surgieron como un reflejo de la tradición del freestyle en Estados Unidos, donde los MCs competían en duelos verbales para demostrar su ingenio y habilidad. Durante los años 2000, estas batallas se popularizaron, organizándose en parques y plazas públicas. Con el tiempo, se formaron grupos dedicados a promover y profesionalizar estas competencias. El auge de las batallas de rap en Perú ocurrió hace algunos años, impulsado por la popularización de eventos internacionales y plataformas digitales que llevaron estas competiciones a un público más amplio. Colectivos como Límite Zero han desempeñado un papel crucial en esta evolución, organizando eventos regulares que no solo atraen a talentosos freestylers de todo el país, sino que también fomentan un sentido de comunidad y cultura en torno al rap improvisado.</p>
+        </section>
+
+        <section id="eventos">
+            <h2 class="section-header">Eventos y Actividades</h2>
+            <div class="gallery">
+                <img src="evento1.png" alt="Evento de rap 1">
+                <img src="evento2.png" alt="Evento de rap 2">
+                <img src="evento3.png" alt="Evento de rap 3">
+            </div>
+            <p>Límite Zero organiza eventos semanalmente, atrayendo a freestylers de todo el país para competir en batallas individuales y grupales.</p>
+            <h3>Actividades Principales</h3>
+            <ul>
+                <li>Batallas de freestyle: 1V1, en parejas, en equipos, etc.</li>
+            </ul>
+            <h3>Actividades Secundarias</h3>
+            <ul>
+                <li>Creación de contenido para redes sociales</li>
+                <li>Presentaciones artísticas (música, graffiti)</li>
+            </ul>
+            <h3>Extensión Geográfica</h3>
+            <ul>
+                <li>Parque John Lennon - San Miguel</li>
+                <li>Chorrillos</li>
+                <li>Barranco</li>
+                <li>Miraflores</li>
+            </ul>
+        </section>
+
+        <section id="observacion">
+            <h2 class="section-header">Observación</h2>
+            <p>La observación que realizamos fue el día sábado 25 de mayo, ya que ese día se realizó una competencia del colectivo, llegamos a las 5:00pm, justo cuando estaba comenzando el evento y nos retiramos poco después de las 7:15pm. Durante este tiempo pudimos observar e incluso interactuar con varios miembros del colectivo.</p>
+            <h3>Actividades Observadas</h3>
+            <ul>
+                <li>Batallas de freestyle: Pudimos observar 9 batallas de freestyle, todas en la modalidad 1V1. Algunos de los recursos/temas usados por los participantes para hacer sus rimas eran: la calle, delincuencia, drogas, el aspecto físico de su rival, su edad, etc. Las batallas duraban entre 5 y 10 minutos, en algunas se le daba 1 minuto a cada participante para que “ataque” y otro para que “responda”, mientras que en otras simplemente se ponía la pista y se les daba 2-3 minutos para que rapeen de forma intercalada. Una vez terminadas las intervenciones de los participantes, el grupo de 3 jurados daba un veredicto. Cada quien tenía su voto propio y podían dar: (ganador a gallo A, ganador a gallo B, empate). Para que uno de los participantes gane necesitaba 2 votos o más, mientras que en caso ninguno tuviera los 2 votos se iba a una “réplica”, donde igualmente se les daba 2-3 minutos para que rapeen y luego el jurado estaba obligado a elegir entre gallo A o gallo B.</li>
+                <li>Torneo de 8: Al llegar vimos que ya había gente rapeando, creímos que estaban preparándose para el evento. Para no quedarnos con la duda, le preguntamos a uno de los chicos que estaba viendo si ya había empezado el evento. Él nos mencionó que estaban en el “torneo de 8”. Ante su respuesta le hicimos la repregunta: “¿Qué es el torneo de 8?”. Él nos explicó que es una tradición que tiene el organizador del evento, a las primeras 8 personas que lleguen a la rotonda y deseen participar, se les hace batallar en un mini-torneo previo al inicio del evento principal y al ganador se le permite participar sin pagar inscripción.</li>
+                <li>Interacción social: Observamos que la relación de las personas presentes era familiar en el sentido de que hablaban o se saludaban de manera amistosa, y mencionando algo relacionado con la persona que saludaba y con el rap, como por ejemplo: “Mano, vi que le metiste duro en Raptonda, buena”. Además mostraban una relación de confianza por el tipo de bromas que se hacían y el conocimiento personal que tenían uno sobre el otro. Un dato relevante a mencionar es que casi de las 30 personas que asistieron a la competición, solo había 2 mujeres y el resto eran hombres.</li>
+                <li>Venta de comida: Durante el transcurso de la competición, nos percatamos que había un chico que acompañaba a algunos de los participantes que se pasaba por la rotonda para ofrecer su producto. Vendía pan con pollo a un precio de 2.50 soles, se podía pagar tanto con efectivo como con Yape/Plin. Observamos que tanto participantes como las personas que asistían a observar le compraban durante los intermedios entre cada batalla.</li>
+                <li>Consumo de sustancias: Observamos que la mayoría de participantes y espectadores que no competían en ese momento fumaban cigarrillos durante las batallas. Esta fue una acción repetida y muchos de ellos compartían el cigarrillo. Otros se alejaban de la rotonda a un lugar más cerca del malecón para fumar lo que por el olor podría decir que es marihuana.</li>
+            </ul>
+        </section>
+
+        <section id="sujetos">
+            <h2 class="section-header">Descripción de los Sujetos de Observación</h2>
+            <div class="gallery">
+                <img src="descripsuj1.png" alt="Descripción de sujetos 1">
+                <video src="descripsuj2.mp4" autoplay muted loop></video>
+                <img src="descripsuj3.png" alt="Descripción de sujetos 3">
+                <video src="descripsuj4.mp4" autoplay muted loop></video>
+            </div>
+            <h3>Características Generales</h3>
+            <p>Como ya mencionamos antes, casi la totalidad de presentes eran hombres, en un rango de edad de 16 a 25 años. En cuanto a su aspecto físico, no había algún rasgo predominante. Algo que resalta es desde donde viene la gente a participar, recordemos que el evento fue en San Miguel, habían chicos del Callao, Independencia, Chorrillos, Miraflores, etc. </p>
+            <h3>Forma de Vestir</h3>
+            <ul>
+                <li>Jeans</li>
+                <li>Zapatillas urbanas</li>
+                <li>Poleras y casacas con capucha</li>
+                <li>Mochilas, riñoneras o canguros</li>
+                <li>Gorras</li>
+                <li>Cadenas, llaveros</li>
+            </ul>
+            <h3>Trato y Relación con Personas</h3>
+            <p>Los participantes parecen conocerse bien entre sí, mostrando una camaradería evidente y una relación de confianza. Este entorno familiar facilita la interacción y la comunicación abierta. Aunque muestran actitudes de alardeo con comportamientos delincuenciales ficticios, esto parece ser parte del ambiente y no un indicio de verdadera delincuencia. Con personas ajenas a su entorno inmediato, mantienen una actitud abierta y confiada, expresando pensamientos sobre una variedad de temas sin reserva.</p>
+            
+        </section>
+
+        <section id="conclusiones">
+            <h2 class="section-header">Conclusiones Personales</h2>
+            <h3>Christian</h3>
+            <p>Mi conclusión es que Limite Zero es un espacio libre y seguro donde todas las personas pueden expresar sus opiniones libremente sin necesidad de que se conozcan, solamente hay algo que los une, su pasión, creatividad y gusto por el freestyle que es por lo que se reúnen y organizan sus competiciones. En general, me parece un espacio agradable donde además de expresar su arte y todo lo que tienen que decir, siento que encuentran personas con las que pueden compartir el gusto por el freestyle y por el género urbano.</p>
+            <h3>Sebastian</h3>
+            <p>Realmente el ambiente es agradable, más si te gusta el freestyle. Todas las personas con las que tratamos fueron amables y con una vibra muy positiva, se notaba que la gran mayoría estaba ahí para disfrutar las batallas y compartir con el resto.</p>
+            <h3>Fabio</h3>
+            <p>Desde mi punto de vista el evento es bastante inclusivo, ya que los representantes están dispuestos a recibir todo tipo de personas. En este destacaba un ambiente positivo y también se podría decir seguro ya que había un serenazgo pendiente de todo. Conversando con algunos observadores pude notar que LZ es un colectivo conocido por ser “el de siempre y a veces tranquilo pero chévere” refiriéndose a que constantemente tiene eventos y algunas veces no va mucha gente pero igual siempre es grato asistir.</p>
+            <h3>Aldo</h3>
+            <p>Podría concluir que este colectivo, Limite Zero, genere espacios muy fraternales para poder demostrar el talento y la creatividad de todos sus integrantes. Si bien, durante las batallas suelen retarse y referirse entre ellos de formas diferentes, después de ellas siempre se daban un abrazo por lo que nunca quedaba ningún resentimiento. Además durante las batallas se notaba que se conocían entre ellos pues también se arengaban desde el público y sabían a quien escoger como sus jueces por lo que probablemente llevarían mucho tiempo juntos.</p>
+        </section>
+
+
+
+        <section id="fotos">
+            <h2 class="section-header">Fotos</h2>
+            <div class="gallery">
+                <img src="fotitos.png" alt="Fotos del evento">
+                <img src="fotos3.png" alt="Evento 1">
+                <img src="fotos4.png" alt="Evento 2">
+                <img src="fotos5.png" alt="Evento 3">
+            </div>
+        </section>
+
+        <section id="contexto">
+            <h2 class="section-header">Contexto de la observación (croquis)</h2>
+            <div class="croquis">
+                <img src="croquis.png" alt="Croquis de la visita 1">
+                <img src="croquis2.png" alt="Croquis de la visita 2">
+            </div>
+        </section>
+
+        <section id="bibliografia">
+            <h2 class="section-header">Bibliografía</h2>
+            <p>Instagram Límite Zero: <a href="https://www.instagram.com/limitezerope" class="highlight">@limitezerope</a></p>
+            <p>Freestyle peruano: Las batallas callejeras se mudaron a los grandes escenarios profesionales: <a href="https://somosperiodismo.com/freestyle-peruano-las-batallas-callejeras-se-mudaron-a-los-grandes-escenarios-profesionales" class="highlight">Artículo</a></p>
+        </section>
+
+        <section id="comentarios">
+            <h2 class="section-header">Comentarios</h2>
+            <div class="comments-section">
+                <form action="mailto:fabio.tejada@utec.edu.pe" method="post" enctype="text/plain">
+                    <textarea name="comment" placeholder="Escribe tu comentario" rows="5" required></textarea>
+                    <button type="submit">Enviar</button>
+                </form>
+            </div>
+        </section>
+
+
+        <section id="integrantes">
+            <h2 class="section-header">Integrantes del Grupo</h2>
+            <ul>
+                <li>Fabio Tejada</li>
+                <li>Christian Mar</li>
+                <li>Aldo Jaimes</li>
+                <li>Sebastian Sanchez</li>
+            </ul>
+        </section>
+    </div>
+    <footer>
+        <p>© 2024 Límite Zero. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>
